@@ -319,6 +319,45 @@ const creatorViewMeeting = async(req, res, next)=>{
     }      
     
 }
+const creatorViewPendingMeeting = async(req, res, next)=>{
+    const id = req.user;
+    const {code} = req.params;
+    try{
+        let sql = `select * from meetings 
+                   inner join venues
+                   on venues_id = venue_id
+                   where meeting_code = ? and teachers_id is null and isArchive = 0`
+
+        const [result] = await db.query(sql, [code]);
+
+        if(!result.length){
+            next(new ExpressError(404, "No Content Available, Please Contact Support"))
+         }else{
+            const meetingDetails = {
+                id: result[0]?.meeting_id,
+                title: result[0]?.meeting_title,
+                description: result[0]?.meeting_description,
+                code: result[0]?.meeting_code,
+                date: result[0]?.meeting_date,
+                day: result[0]?.meeting_day,
+                time: {
+                    start: result[0]?.time_start,
+                    end: result[0]?.time_end
+                },
+                venue: {
+                    id: result[0]?.venue_id,
+                    area: result[0]?.area,
+                    room: result[0]?.room
+                },
+                views: result[0]?.views,
+            }
+            res.status(200).json({meetingDetails})
+         } 
+    }catch(error){
+        next(error)
+    }      
+    
+}
 
 
 const participantMyMeetings = async(req, res, next)=>{
@@ -1044,9 +1083,9 @@ const updatePendingMeeting = async(req, res, next)=>{
                         venues_id = ?
                     where student_creator_id = ? and meeting_code = ?`
 
-        //await db.query(`set sql_safe_updates = 0`)        
+        await db.query(`set sql_safe_updates = 0`)        
         await db.query(sql, [title, description, date, day, start, end, venue_id, id, code])
-        //await db.query(`set sql_safe_updates = 1`)
+        await db.query(`set sql_safe_updates = 1`)
         res.status(200).json({success_message: "Meeting Details has been updated"})
     }catch(error){
         next(error)
@@ -1171,6 +1210,7 @@ module.exports = {
     creatorPendingMeetings,
     creatorMyMeetings,
     creatorViewMeeting,
+    creatorViewPendingMeeting,
     participantMyMeetings,
     participantViewMeetings,
     

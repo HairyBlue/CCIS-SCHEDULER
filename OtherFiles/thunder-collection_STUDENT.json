@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "STUDENT",
-    "dateExported": "2023-04-01T15:02:49.491Z",
+    "dateExported": "2023-04-04T02:57:46.202Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -186,6 +186,24 @@
             "tests": []
         },
         {
+            "_id": "e25ead9d-41e4-46a6-b9cd-437962c19881",
+            "colId": "cd4022c5-cf1f-4669-8384-aa447a3c7533",
+            "containerId": "",
+            "name": "VIEW PENDING MEETING",
+            "url": "localhost:5000/api/student/2B1FF8A6/view-pending-meeting/creator",
+            "method": "GET",
+            "sortNum": 7496.4,
+            "created": "2023-04-04T02:57:09.025Z",
+            "modified": "2023-04-04T02:57:35.036Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBhMGE4NzNmLTJkN2UtNDRkZS1iZWU5LTFkZmJlYzBhZDcwYiIsImlhdCI6MTY4MDEwNzQ4Nn0.dvcuRhaXbTpC9XG5MQWIn4lLfhy2KF7fruz71QX5fRA"
+            },
+            "tests": []
+        },
+        {
             "_id": "a6f467de-bef0-48a5-b978-99a0afbb6fd4",
             "colId": "cd4022c5-cf1f-4669-8384-aa447a3c7533",
             "containerId": "",
@@ -309,12 +327,12 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2023-03-29T10:24:00.696Z",
-            "modified": "2023-03-29T16:55:43.649Z",
+            "modified": "2023-04-04T02:53:18.409Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"title\": \"ABOUT GRADES\",\n  \"description\": \"THE KEY TO LIFE IS THE AHPINIS IN YOUR ASSHOL\",\n  \"date\": \"2023-03-28\",\n  \"day\": \"THURSDAY\",\n  \"start\": \"9:00\",\n  \"end\": \"12:00\",\n  \"venue_id\": \"66c7ea44-ce2c-4679-89ee-491bd8b389d5\"\n}",
+                "raw": "{\n  \"title\": \"ABOUT GRADES yow\",\n  \"description\": \"THE KEY TO LIFE IS THE AHPINIS IN YOUR ASSHOL\",\n  \"date\": \"2023-03-28\",\n  \"day\": \"THURSDAY\",\n  \"start\": \"9:00\",\n  \"end\": \"12:00\",\n  \"venue_id\": \"66c7ea44-ce2c-4679-89ee-491bd8b389d5\"\n}",
                 "form": []
             },
             "auth": {
@@ -405,7 +423,7 @@
             "method": "PATCH",
             "sortNum": 65000,
             "created": "2023-03-29T15:51:19.510Z",
-            "modified": "2023-03-29T15:55:34.681Z",
+            "modified": "2023-04-04T01:25:20.460Z",
             "headers": [],
             "params": [],
             "body": {
@@ -414,7 +432,7 @@
                 "form": [
                     {
                         "name": "filename",
-                        "value": "vmy8zfh2tdxo9nivfmm3"
+                        "value": ""
                     }
                 ],
                 "files": [

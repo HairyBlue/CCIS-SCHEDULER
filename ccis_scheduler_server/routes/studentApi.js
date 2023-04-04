@@ -17,6 +17,7 @@ router.get("/my-meetings/participant",jwtVerify ,studentController.participantMy
 router.get("/my-archive-meetings/creator", jwtVerify, studentController.creatorArchiveMeetings)
 router.get("/my-archive-meetings/participant",jwtVerify ,studentController.participantArchiveMeetings)
 router.get("/:code/view-meeting/creator", jwtVerify, studentController.creatorViewMeeting)
+router.get("/:code/view-pending-meeting/creator", jwtVerify, studentController.creatorViewPendingMeeting)
 router.get("/:code/view-meeting/participant", jwtVerify, studentController.participantViewMeetings)
 router.get("/:code/view-archive-meeting/creator", jwtVerify, studentController.creatorViewArchiveMeeting)
 router.get("/:code/view-archive-meeting/participant", jwtVerify, studentController.participantViewArchiveMeetings)
