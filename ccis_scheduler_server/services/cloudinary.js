@@ -9,7 +9,7 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
     cloudinary,
-        folder: 'Scheduler',
+        folder: 'CCIS SCHEDULER',
         allowedFormats: ['jpeg', 'png', 'jpg']
 });
 
