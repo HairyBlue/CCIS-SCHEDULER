@@ -9,8 +9,10 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
     cloudinary,
-        folder: 'CCIS SCHEDULER',
-        allowedFormats: ['jpeg', 'png', 'jpg']
+    params: {
+     folder: 'CCIS SCHEDULER',
+     allowedFormats: ['jpeg', 'png', 'jpg']
+    }
 });
 
 module.exports = {
