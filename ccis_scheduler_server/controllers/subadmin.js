@@ -436,7 +436,7 @@ const addTeacher = async(req, res, next)=> {
 
         const url = "Login Website For Teacher"
         await transporter.sendMail({
-            from: process.env.GMAIL_USER,
+            from:`"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
             to: email,
             subject: 'Teacher Account For Scheduler',
             html: ` <h3>Welcome to Scheduler App</h3>

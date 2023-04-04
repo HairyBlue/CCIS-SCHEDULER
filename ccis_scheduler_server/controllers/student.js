@@ -782,7 +782,7 @@ const signup = async(req, res, next)=>{
                 const url = `https://render.com.ccis-scheduler/verify-account/:id/:verify_token` //localhost:5000/api/student/verify-signup/${id}/${verify_token} react front end useparams then display useEffect
 
                 await transporter.sendMail({
-                    from: process.env.GMAIL_USER,
+                    from: `"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
                     to: email,
                     subject: 'Scheduler Signup Verification',
                     html: `<b>Welcome to Scheduler App</b>
@@ -895,7 +895,7 @@ const confirmCredentials = async(req, res, next)=>{
         res.header(emailCodeToken)
 
         await transporter.sendMail({
-            from: process.env.GMAIL_USER,
+            from:`"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
             to: email,
             subject: 'Verification Code',
             html: `This verification code will expires within 6 minutes

@@ -474,7 +474,7 @@ const addTeacher = async(req, res, next)=> {
 
         const url = "https://www.youtube.com/" //react link for teachers login
         await transporter.sendMail({
-            from: process.env.GMAIL_USER,
+            from: `"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
             to: email,
             subject: 'Teacher Account For Scheduler',
             html: `
@@ -529,7 +529,7 @@ const addSubAdmins = async(req, res, next)=>{
          
         const url = "Login Website For SubAdmin"
         await transporter.sendMail({
-            from: process.env.GMAIL_USER,
+            from: `"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
             to: email,
             subject: 'Sub Admin',
             html: `You have been added as Sub Admin to manage the Scheuler App
@@ -558,7 +558,7 @@ const confirmCredentials = async(req, res, next)=>{
         res.header(emailCodeToken)
 
         await transporter.sendMail({
-            from: process.env.GMAIL_USER,
+            from: `"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
             to: email,
             subject: 'Admin Verification Code',
             html: `This verification code will expires within 6 minutes

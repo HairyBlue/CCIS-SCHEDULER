@@ -409,7 +409,7 @@ const confirmCredentials = async(req, res, next)=>{
         res.header(emailCodeToken)
 
         await transporter.sendMail({
-            from: process.env.GMAIL_USER,
+            from: `"CCIS SCHEDULER" ${process.env.GMAIL_USER}`,
             to: email,
             subject: 'Verification Code',
             html: `This verification code will expires within 6 minutes
